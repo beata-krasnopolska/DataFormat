@@ -9,22 +9,37 @@ namespace DataTypes
 
         public string Differ(string dataType)
         {
-            if (int.TryParse(dataType, out int tryInt))
+            if (IsInt(dataType))
             {
                 return "The data type is integer";
             }
 
-            if (decimal.TryParse(dataType, out decimal tryDec))
+            if (IsDecimal(dataType))
             {
                 return "The data type is decimal";
             }
 
-            if (_vovels.Contains(dataType))
+            if (IsVovel(dataType))
             {
                 return "The entered data type is a vovel";
             }
 
             return "There is other data type";            
+        }
+
+        private bool IsInt(string dataType)
+        {
+            return int.TryParse(dataType, out int _);
+        }
+
+        private bool IsDecimal(string dataType)
+        {
+            return decimal.TryParse(dataType, out decimal _);
+        }
+
+        private bool IsVovel(string dataType)
+        {
+            return _vovels.Contains(dataType);
         }
     }
 }

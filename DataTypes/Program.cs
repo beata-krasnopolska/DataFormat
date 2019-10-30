@@ -6,7 +6,7 @@ namespace DataTypes
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Program takes a character as input and checks the input (lowercase) is a vowel, an integer number or decimal, or any other symbol.");
+            Console.WriteLine("Program takes a character as an input and checks the input (lowercase) is a vowel, an integer number or decimal, or any other symbol.");
 
             Console.WriteLine("Enter the data");
             string dataType = Console.ReadLine();
