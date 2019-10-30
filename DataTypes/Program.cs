@@ -11,9 +11,10 @@ namespace DataTypes
             Console.WriteLine("Enter the data");
             string dataType = Console.ReadLine();
 
-            var newData = new DataDifferencer().Differencer(dataType);
+            var dataDifferencer = new DataDifferencer();
+            dataDifferencer.Differ(dataType);
 
-            Console.WriteLine(newData);
+            Console.WriteLine(dataDifferencer);
             Console.ReadKey();
         }
     }

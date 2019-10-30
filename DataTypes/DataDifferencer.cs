@@ -1,32 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DataTypes
 {
     class DataDifferencer
     {
-        public  string Differencer(string dataType)
-        {
-            int tryInt;
-            decimal tryDec;
-            string result;
-            if (Int32.TryParse(dataType, out tryInt))
-            {
-                result = "The data type is integer";
-            }
-            else if (Decimal.TryParse(dataType, out tryDec))
-            {
-                result = "The data type is decimal";
-            }
-            else if (dataType == "a" || dataType == "e" || dataType == "i" || dataType == "o" || dataType == "u" || dataType == "y")
-            {
-                result = "The entered data type is a vovel";
-            }
-            else
-            {
-                result = "There is other data type";
-            }
-            return result;
-        }
+        private List<string> _vovels = new List<string>() { "a", "e", "i", "o", "u", "y" };
 
+        public string Differ(string dataType)
+        {
+            if (int.TryParse(dataType, out int tryInt))
+            {
+                return "The data type is integer";
+            }
+
+            if (decimal.TryParse(dataType, out decimal tryDec))
+            {
+                return "The data type is decimal";
+            }
+
+            if (_vovels.Contains(dataType))
+            {
+                return "The entered data type is a vovel";
+            }
+
+            return "There is other data type";            
+        }
     }
 }
